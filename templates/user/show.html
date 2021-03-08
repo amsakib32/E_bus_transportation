@@ -1,0 +1,14 @@
+{% extends 'base1.html' %}
+{% block content %}
+    <div style="position: center;background-color: #e67280;width: 40%; margin-right: 15px;margin-top: 5px;margin-left: 255px">
+     <div style="padding-top: 20px;padding-left: 65px;padding-bottom: 20px">
+    <h1>Your Profile</h1><br>
+    <h1>
+       UserName : {{ user }}<br>
+        UserId : {{ user.user_id}}<br>
+        Contact : {{ user.contact }}<br>
+       Address : {{ user.address }}<br>
+        Birth Date : {{ user.Date_Of_Birth }}</h1>
+     </div>
+    </div>
+{% endblock %}

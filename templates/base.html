@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+#white_background{
+            width: 93%;
+            margin:0;
+            padding-top: 1px;
+            height: 65px; 
+            background-color:white;
+        }
+            #red{
+            width: 93%;
+            padding-top: 100px;
+                height: 590px;
+            background-color:#d71731;
+            color: white;
+            padding-left: 100px;
+            float: left;
+        }
+            .topbar{
+            float:right;
+            border-left: 1px white solid;
+            height: 100%;
+            margin-top: 10px;
+            margin-right: 50px;
+        }
+            body{
+            margin: 0;
+            padding: 0;
+        }
+            #red_background{
+            font-weight: normal;
+            font-size:100%;
+            position: relative;
+            height: 100px;
+            width: 100px;
+            padding-bottom: 7px;
+            padding-top: 0px;
+            padding-left: 60px;
+            padding-right: 40px;
+            background-color: #d71731;
+            color: white;
+            
+        }
+            .first{
+                font-size: 390%;
+                font-display: block;
+                font-style:normal;
+            }
+            .second-part{
+                width: 75%;
+            padding-top: 20px;
+            height: 90px;
+            background-color:#e67280;
+            color: white;
+            padding-left: 50px;
+            float: left;
+            }
+            #from{
+                float: left;
+                padding-right: 175px;
+            }
+            #input{
+                float: left;
+                padding-right: 20px;
+                position:relative;
+            }
+            .input1{
+                padding-left: 100px;
+            }
+.navbar {
+  overflow: hidden;
+  background-color:lightpink;
+  font-family: Arial, Helvetica, sans-serif;
+height:70px;
+}
+
+.navbar a {
+ float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  margin-right:50px;
+ margin-top: 15px;
+}
+
+.dropdown {
+    float: left;
+  overflow:hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color:snow;
+  padding: 14px 16px;
+  padding-right: 90px;
+  background-color: inherit;
+  font-family: inherit;
+  margin-top: 15px;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color:#d71731;
+  height:inherit;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color:pink ;
+  min-width: 100px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: left;
+  color:ghostwhite;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+}
+
+.dropdown-content a:hover {
+  background-color: #d71731;
+}
+
+.dropdown:hover .dropdown-content {
+  display:block;
+}
+    #white{
+        padding-top: 70px;
+        margin-left: 100px;
+        margin-right: 30px;
+    }
+    #bus_operator{
+        
+        border-right: 1px red;
+       float: left;
+    font-size: 25px;
+    }
+    .num{
+         margin-top: 70px;
+        margin-left: 100px;
+        margin-right: 30px;
+        float: left;
+        font-size: 80px;
+    }
+    #full{
+        background-color: #d71731;
+        height: max-content;
+    }
+</style>
+</head>
+<body>
+<div id="full">
+<div class="navbar">
+
+
+        <a href="{% url 'bookticket' %}"><b>HOME</b></a>
+        <a href="{% url 'registration' %}"><b>SIGN UP</b></a>
+        <a href="{% url 'login' %}"><b>LOG IN</b></a>
+        <a href="{% url 'customercare' %}"><b>CUSTOMER CARE</b></a>
+         <a href="{% url 'bus' %}"><b>BUS INFO</b></a>
+
+
+        <div class="dropdown">
+
+            <button class="dropbtn"><b>PROFILE</b>
+          <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+
+              <a href="{% url 'profilecreate' %}"><b>Create PROFILE</b></a>
+              <a href="{% url 'showprofile' %}"><b>Show PROFILE</b></a>
+           </div>
+        </div>
+      <div class="dropdown">
+         <button class="dropbtn"><b>OPTION</b>
+           <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <a href="{% url 'history' %}">Booked History</a>
+           <a href="{% url 'cancel' %}">CANCEL TICKET</a>
+           <a href="{% url 'printticket' %}">Show TICKET</a>
+           <a href="{% url 'smsticket' %}">SMS TICKET</a>
+            <a href="{% url 'cancelhistory' %}">Cancelation History</a>
+       </div>
+      </div>
+     <a href="{% url 'logout' %}"><b> LOGOUT</b></a>
+      </div>
+ <div id="red">
+        <div class="first"><b>First Online </b></div>
+        <div id="bus"><h1>Inter City Bus Ticketing Portal In Dhaka City</h1></div>
+
+
+     {% block content %}
+
+     {% endblock %}
+ </div>
+    
+</body>
+</html>

@@ -1,0 +1,16 @@
+{% extends 'base1.html' %}
+
+{% block content %}
+    <div style="position: center;background-color: #e67280;width: 60%; margin-right: 15px;margin-top: 5px;margin-left: 135px">
+        <form method="POST" action="{% url 'bookticket' %}">
+
+            {% csrf_token %}
+            <div style="padding-top: 20px;padding-left: 65px">
+            <h1>Welcome To Our SMS Service</h1>
+            <h3>{{ sms.as_p }}</h3>
+              <h1> <input type="submit"></h1><div>
+
+
+        </form>
+    </div>
+{% endblock %}

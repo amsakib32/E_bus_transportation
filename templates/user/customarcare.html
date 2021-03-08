@@ -1,0 +1,22 @@
+{% extends 'base1.html' %}
+
+{% block content %}
+     <div style="position: center;background-color: #e67280;width: 60%; margin-right: 15px;margin-top: 5px;margin-left: 135px">
+      {%  if messages %}
+            {% for message in messages %}
+                {{ message }}
+            {% endfor %}
+        {% endif %}
+    <form method="POST" >
+
+        {% csrf_token %}
+        <div style="padding-top: 20px;padding-left: 65px">
+        <h1>Welcome To Our Customer Care Service</h1>
+        <h3>{{ customer.as_p }}</h3>
+      <div style="position: center; padding-bottom: 10px"> <h1> <input type="submit"></h1></div>
+      </div>
+
+
+    </form>
+    </div>
+{% endblock %}

@@ -37,6 +37,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'bus.apps.BusConfig',
+    'Driver.apps.DriverConfig',
+    'payment.apps.PaymentConfig',
+    'station.apps.StationConfig',
+    'ticket.apps.TicketConfig',
+    'time_slot.apps.TimeSlotConfig',
+    'user.apps.UserConfig',
+
 ]
 
 MIDDLEWARE = [

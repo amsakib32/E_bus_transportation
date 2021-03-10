@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Use</title>
+</head>
+<body>
+    {% for s in uses %}
+        <h2>Station info: {{ s.id }}</h2>
+       <h3> {{ s.bus_id}}</h3><br>
+        <h3> {{ s.station_id }}</h3><br>
+    {% endfor %}
+</body>
+</html>

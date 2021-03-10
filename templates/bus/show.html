@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Show</title>
+</head>
+<body>
+{% block content %}
+
+
+
+            {% for s in buses %}
+                       <h3>BUS ID : {{ s.id }}</h3>
+                   <h3>Bus name: {{ s.bus_name }}</h3>
+                    <h3>Bus type: {{ s.bus_type }}</h3>
+
+
+            {% endfor %}
+
+
+{% endblock %}
+</body>
+</html>

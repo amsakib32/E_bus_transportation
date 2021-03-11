@@ -1,0 +1,33 @@
+{% extends 'base1.html' %}
+
+
+{% block content %}
+
+<h1>Your Booked Ticket History</h1>
+    {% for s in o %}
+
+
+
+
+
+
+
+
+
+                    <div style="background-color: #e67280; float: left; width: 20%; margin-right: 15px">
+
+                   <div style="padding-left: 5px; padding-top: 5px">
+                        <h3>User ID: {{ s.user_id }}</h3>
+                       <h3>Ticket ID : {{ s.ticket}}</h3>
+                   <h3>Booked date: {{ s.created_date }}</h3>
+                    <h3>Payment Status: {{ s.status }}</h3></div>
+
+
+                </div>
+    {% endfor %}
+
+
+
+
+
+{% endblock %}

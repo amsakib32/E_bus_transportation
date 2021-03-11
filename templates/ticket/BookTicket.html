@@ -1,0 +1,15 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+    <div id="from">
+
+    <form method="POST" action="{% url 'ticket' %}">
+        {% csrf_token %}
+
+       {{ Ticketforms.as_p }}
+
+        <button type="submit">Search</button></h1>
+    </form>
+    </div>
+{% endblock %}

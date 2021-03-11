@@ -1,0 +1,10 @@
+{% extends 'base1.html' %}
+
+{% block content %}
+        {% csrf_token %}
+
+    <h1>Your username is: {{ order}}</h1><br>
+    <h1>Your ticket id is:  {{ ticket }}</h1>
+    <a href="{% url 'payment' ticket %}" ><button type="submit">MakePayment</button></a>
+
+{% endblock %}

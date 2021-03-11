@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <form method="POST" >
+
+        {% csrf_token %}
+        <h1>{{ Ticketforms.as_p }}</h1>
+        <button type="submit">SUBMIT</button>
+
+    </form>
+{% endblock %}

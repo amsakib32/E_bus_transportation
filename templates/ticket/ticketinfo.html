@@ -1,0 +1,26 @@
+{% extends 'base1.html' %}
+{% block content %}
+    {%  if messages %}
+            {% for message in messages %}
+                {{ message }}
+            {% endfor %}
+        {% endif %}
+
+    {% for t in ticket_list %}
+            <div style="background-color: #e67280; float: left; width: 20%; margin-right: 15px">
+
+                       <div style="padding-left: 15px; padding-top: 5px">
+                           <h3>User name:{{ user }}</h3>
+                           <h3>User id:{{ user.id }}</h3>
+                           <h3>Ticket id:{{ t.id }}</h3>
+                           <h3>Start Time : {{ t.start_time }}</h3>
+                           <h3>From: {{ t.source_id }}</h3>
+                           <h3>TO: {{ t.destination_id }}</h3>
+                           <h3>Bus : {{ t.bus }}</h3>
+                           <h3>Date : {{ t.date }}</h3>
+                           <h3>Price : {{ t.price }}</h3>
+                       </div>
+            </div>
+
+    {% endfor %}
+{% endblock %}

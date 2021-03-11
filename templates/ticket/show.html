@@ -1,0 +1,19 @@
+{% extends 'base1.html' %}
+{% block content %}
+    {% for t in tickets %}
+            <div style="background-color: #e67280; float: left; width: 20%; margin-right: 15px">
+
+                       <div style="padding-left: 15px; padding-top: 5px">
+                           <h3>Start Time : {{ t.start_time }}</h3>
+                           <h3>From: {{ t.source_id }}</h3>
+                           <h3>TO: {{ t.destination_id }}</h3>
+                           <h3>Bus : {{ t.bus }}</h3>
+                           <h3>Avaible Seat : {{ t.avaible_seat }}</h3>
+                           <h3>Date : {{ t.date }}</h3>
+                           <h3>Price : {{ t.price }}</h3>
+                           <a href="{% url 'orderticket' t.id %}" ><button type="submit">Book</button></a>
+                       </div>
+            </div>
+
+    {% endfor %}
+{% endblock %}

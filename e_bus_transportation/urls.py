@@ -16,9 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from bus import views as bus
+from Driver import views as driver
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('bus/', bus.show_info,name='bus'),
     path('use/', bus.use_show_info,name='use'),
+    path('driver/',driver.show_info,name='driver')
 ]

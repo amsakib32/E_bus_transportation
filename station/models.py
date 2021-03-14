@@ -1,6 +1,6 @@
 from django.db import models
 
-# Create your models here.
+# Create Station.
 class Station(models.Model):
     station_name=models.CharField(max_length=200)
 

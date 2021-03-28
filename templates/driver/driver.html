@@ -2,9 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Driver</title>
 </head>
 <body>
-
+hi ,welcome to station list
+{% for s in drivers %}
+        <h2>Station info: {{ s.id }}</h2><br>
+       <h3> {{ s.name }}</h3><br>
+       <h3> {{ s.contact }}</h3><br>
+      <h3>{{ s.n_id }}</h3>
+    <br>
+    {% endfor %}
 </body>
 </html>

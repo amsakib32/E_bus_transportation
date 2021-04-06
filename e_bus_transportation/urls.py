@@ -14,13 +14,36 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path,include
+from user import views as users
+from time_slot import views as time
+from station import views as station
 from bus import views as bus
 from Driver import views as driver
+from payment import views as payment
+from ticket import views as ticket
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+path('admin/', admin.site.urls),
+    path('showprofile/', users.show_info,name='showprofile'),
+    path('time/', time.show_info,name='time'),
+    path('station/', station.show_info,name='station'),
     path('bus/', bus.show_info,name='bus'),
     path('use/', bus.use_show_info,name='use'),
+    path('driver/',driver.show_info,name='driver'),
+    path('payment/',payment.show_info,name='payment'),
+    path('ticket/',ticket.show_info,name='ticket'),
+    path('registration/',users.UserReg,name='registration'),
+    path('profilecreate/',users.ProfileCreate,name='profilecreate'),
+    path('accounts/',include('django.contrib.auth.urls')),
+    path('',ticket.BookTicket,name='bookticket'),
+    path('orderticket/<int:ticket_id>',ticket.make_order,name='orderticket'),
+    path('payment/<int:ticket_id>',ticket.make_payment,name='payment'),
+    path('customercare/',users.customercare,name='customercare'),
+    path('smsticket/', users.smsticket, name='smsticket'),
+    path('printticket', ticket.print_ticket, name='printticket'),
+    path('bookedhistory', ticket.orderhistory, name='history'),
+    path('cancelticket', ticket.cancelticket, name='cancel'),
+    path('cancelhistory', ticket.cancelhistory, name='cancelhistory'),
 
 ]

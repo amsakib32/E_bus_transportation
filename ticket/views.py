@@ -94,6 +94,8 @@ def make_payment(request,ticket_id):
     messages=''
     form=Paymentform()
     ticket = get_object_or_404(Ticket_info, id=ticket_id)
+    ticket.avaible_seat = ticket.avaible_seat - 1
+    ticket.save()
     #order = Payment(user=request.user, ticket=ticket)
     if request.method =="POST":
         form=Paymentform(request.POST)

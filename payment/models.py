@@ -1,7 +1,7 @@
 from django.db import models
 from user.models import Profile
 from ticket.models import Ticket
-# Create your models here
+# Create your payment models here
 class Payment(models.Model):
     total_bill=models.FloatField(null=True)
     payment_type=models.CharField(max_length=50)
